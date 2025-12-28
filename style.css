@@ -208,3 +208,131 @@ footer {
   max-width: 100%;
   height: auto;
 }
+
+/* ===================================
+   TABLET LAYOUT (600px – 999px)
+   =================================== */
+@media (min-width: 600px) and (max-width: 999px) {
+  /* Reduce overall padding */
+  section,
+  footer {
+    padding: 4rem 1.5rem;
+  }
+
+  /* Hero */
+  .hero-grid {
+    grid-template-columns: 1fr 1.2fr; /* give a bit more space to the text card */
+    gap: 1.5rem;
+  }
+
+  .hero-name {
+    left: clamp(1.5rem, 6vw, 6rem);
+    font-size: clamp(2.8rem, 7vw, 3.5rem);
+  }
+
+  .about-me-content {
+    padding: 2rem;
+    gap: 1rem;
+  }
+
+  /* Projects – force exactly 2 columns */
+  .my-work-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .project-img-placeholder {
+    font-size: 1.6rem;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-content {
+    gap: 1rem;
+  }
+}
+
+/* ===================================
+   MOBILE LAYOUT (max-width: 599px)
+   =================================== */
+@media (max-width: 599px) {
+  /* Reduce padding everywhere */
+  section,
+  footer {
+    padding: 3rem 1rem;
+  }
+
+  /* Hero – stack everything vertically */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 1.5rem;
+  }
+
+  /* Name moves to top, no longer absolute */
+  .hero-name {
+    position: static;
+    font-size: clamp(2.2rem, 10vw, 3rem);
+    text-align: center;
+    margin-bottom: 1rem;
+    text-shadow: none; /* looks better centered without shadow */
+  }
+
+  .about-me-img {
+    transform: none; /* remove scale overflow */
+    order: -1; /* image goes to the top */
+  }
+
+  .about-me-content {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .social-links {
+    justify-content: center; /* center icons on mobile */
+    gap: 1.5rem;
+  }
+
+  /* Projects – 1 column (auto-fit would do this anyway, but explicit) */
+  .my-work-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-img-placeholder {
+    font-size: 1.4rem;
+  }
+
+  /* Footer – stack text above image */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .footer-content {
+    gap: 1.25rem;
+    order: -1; /* text comes first */
+  }
+
+  .footer-links {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .contact-details,
+  .email-details {
+    justify-content: center;
+  }
+
+  /* Bigger touch targets for icons */
+  .icon {
+    width: 2rem;
+    height: 2rem;
+    padding: 0.5rem; /* adds extra tappable area */
+  }
+}
