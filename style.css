@@ -1,5 +1,9 @@
 /* GLOBAL  */
 
+html {
+  font-size: 16px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +13,10 @@
 body {
   font-family: "Roboto", sans-serif;
   color: #333;
+  background-color: white;
+}
+
+.blue-background {
   background-color: rgb(43, 169, 175);
 }
 
@@ -19,39 +27,69 @@ h2 {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .about-me-img {
-  width: 600px;
+  width: 37.5rem;
   height: auto;
 }
 
 section {
-  max-width: 1200px;
+  max-width: 75rem;
   margin: 0 auto;
 
-  padding: 80px 0;
+  padding: 5rem 1.25rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* HERO SECTION */
 .hero-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
+  position: relative;
+  align-items: end;
+}
+
+.hero-name {
+  position: absolute;
+  bottom: 0;
+  left: 8rem;
+  font-size: 4rem;
+  font-family: "Playfair Display", serif;
+  font-weight: normal;
+  color: white;
+  text-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
+  z-index: 2;
+
+  left: clamp(1rem, 10vw, 8rem);
+  font-size: clamp(2.5rem, 8vw, 4rem);
+}
+
+.about-me-img {
+  width: 100%;
+  height: auto;
+  transform: scale(1.1);
 }
 
 .about-me-content {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.25rem;
 
   background-color: white;
-  border: 2px solid black;
-  padding: 40px;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
 }
 
 .about-me-text {
@@ -60,16 +98,16 @@ section {
 
 .social-links {
   display: flex;
-  gap: 20px;
+  gap: 1.25rem;
 
-  padding: 10px;
+  padding: 0.625rem;
   align-items: center;
   justify-content: end;
 }
 
 .icon {
-  width: 25px;
-  height: 25px;
+  width: 1.5625rem;
+  height: 1.5625rem;
 }
 
 /* MY WORK */
@@ -77,36 +115,45 @@ section {
   background-color: white;
 }
 .my-work-heading {
-  padding-bottom: 20px;
+  padding-bottom: 1.25rem;
 }
 .my-work-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+  gap: 2.5rem;
 }
 
 .project-card {
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  border: 2px solid black;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+
+  height: 100%;
+  min-height: 25rem;
 }
 
 .project-img-placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
+
   background-color: rgb(160, 10, 10);
   color: white;
+
   width: 100%;
-  height: 200px;
+  aspect-ratio: 16 / 9;
+  min-height: unset;
+
+  font-size: 1.875rem;
+  font-family: "Playfair Display", serif;
 }
 
 .project-content {
   display: flex;
   flex-direction: column;
-  font-size: 16px;
-  gap: 10px;
+  font-size: 1rem;
+  gap: 0.625rem;
+  padding: 1.25rem;
 }
 
 .project-main {
@@ -115,40 +162,49 @@ section {
   align-items: center;
 }
 
+.project-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
 /* FOOTER */
 footer {
   color: white;
 
-  max-width: 1200px;
+  max-width: 75rem;
   margin: 0 auto;
-  padding: 80px 0;
+  padding: 5rem 1.25rem;
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  align-items: center;
 }
 
 .footer-content {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .contact-details,
 .email-details {
   display: flex;
-  gap: 10px;
+  gap: 0.625rem;
   align-items: center;
 }
 
 .footer-links {
   display: flex;
-  gap: 10px;
+  gap: 0.625rem;
 
   align-items: center;
 }
 
-.icon-white {
-  fill: white;
+.footer-img {
+  max-width: 100%;
+  height: auto;
 }
